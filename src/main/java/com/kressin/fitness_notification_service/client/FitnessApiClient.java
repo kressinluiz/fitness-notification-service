@@ -1,8 +1,10 @@
-package com.kressin.fitness_notification_service;
+package com.kressin.fitness_notification_service.client;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
+
+import com.kressin.fitness_notification_service.client.dto.WorkoutPlanResponse;
 
 @Component
 public class FitnessApiClient {
@@ -14,10 +16,11 @@ public class FitnessApiClient {
                 .build();
     }
 
-    public WorkoutDetails getWorkoutDetails(Long workoutId) {
+    // implementar log do que foi fetched
+    public WorkoutPlanResponse getWorkoutPlan(Long workoutPlanId) {
         return restClient.get()
-                .uri("/workouts/{id}", workoutId)
+                .uri("/planner/{id}", workoutPlanId)
                 .retrieve()
-                .body(WorkoutDetails.class);
+                .body(WorkoutPlanResponse.class);
     }
 }

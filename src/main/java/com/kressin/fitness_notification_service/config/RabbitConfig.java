@@ -1,4 +1,4 @@
-package com.kressin.fitness_notification_service;
+package com.kressin.fitness_notification_service.config;
 
 public final class RabbitConfig {
     public static final String EXCHANGE = "fitness.events";

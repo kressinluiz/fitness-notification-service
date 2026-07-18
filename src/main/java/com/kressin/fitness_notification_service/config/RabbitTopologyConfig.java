@@ -1,4 +1,4 @@
-package com.kressin.fitness_notification_service;
+package com.kressin.fitness_notification_service.config;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
